@@ -11,9 +11,23 @@ pipeline{
              script{
                     
               git branch: 'main', url: 'https://github.com/nagarajcloudeng/demo-counter-app.git'
+
                 }
             }
         }
-       
-       }
-    } 
+          
+         stage ('unit test'){
+           
+           steps{
+         
+             sripts{
+                 
+              sh 'mvn test'
+          }
+   
+        }
+     }
+   
+    }
+
+ }  
